@@ -5,7 +5,7 @@ import Colors from "../constants/Colors";
 import { MonoText } from "./StyledText";
 import { Text, View } from "./Themed";
 
-export default function EditScreenInfo({ path }) {
+export default function PEditScreenInfo({ path }) {
   return (
     <View>
       <View style={styles.getStartedContainer}>
