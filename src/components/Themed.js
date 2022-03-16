@@ -1,5 +1,3 @@
-// Learn more about Light and Dark modes:
-// https://docs.expo.dev/guides/color-schemes/
 import {
   Text as DefaultText,
   useColorScheme,

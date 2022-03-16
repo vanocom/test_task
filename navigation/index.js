@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native';
 import {
   DarkTheme,
   DefaultTheme,
@@ -8,15 +9,23 @@ import { createStackNavigator } from "@react-navigation/stack";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
+import styles from './styles';
+import { initialDataDownload } from '../src/slices/async_thuks';
+import { useDispatch } from 'react-redux';
 
 export default Navigation = ({ colorScheme }) => {
+  const dispatch = useDispatch();
+  dispatch(initialDataDownload());
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
+    <SafeAreaView style={ styles.container }>
+     <NavigationContainer
+       linking={LinkingConfiguration}
+       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+     >
       <RootNavigator />
-    </NavigationContainer>
+     </NavigationContainer>
+    </SafeAreaView>
+    
   );
 }
 

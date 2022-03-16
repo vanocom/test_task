@@ -5,13 +5,10 @@ import React from "react";
 
 export function useLoadedAssets() {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
-
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHideAsync();
-
-
         await Font.loadAsync(Ionicons.font);
       } catch (e) {
         console.warn(e);

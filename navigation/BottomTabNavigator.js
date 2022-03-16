@@ -3,16 +3,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import { useColorScheme } from "react-native";
 
-import Colors from "../constants/Colors";
-import TabPhotosScreen from "../screens/TabPhotosScreen";
-import TabFavoritesScreen from "../screens/TabFavoritesScreen";
-import Test from "../components/Test";
+import Colors from "../src/constants/Colors";
+import TabPhotos from "../src/components/tab_photos";
+import TabFavorites from "../src/components/tab_favorites";
+import Test from "../src/components/cell_item";
+import CellItem from "../src/components/cell_item";
 
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-
   return (
     <BottomTab.Navigator
       screenOptions={ {
@@ -23,7 +23,7 @@ export default function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="TabPhotos"
-        component={Test}
+        component={TabPhotos}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -32,7 +32,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabFavorites"
-        component={Test}
+        component={TabFavorites}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -47,29 +47,29 @@ function TabBarIcon(props) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
-const TabOneStack = createStackNavigator();
+// const TabOneStack = createStackNavigator();
 
-function TabPhotosNavigator() {
-  return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabPhotosScreen"
-        component={TabPhotosScreen}
-      />
-    </TabOneStack.Navigator>
-  );
-}
+// function TabPhotosNavigator() {
+//   return (
+//     <TabOneStack.Navigator>
+//       <TabOneStack.Screen
+//         name="TabPhotosScreen"
+//         component={TabPhotosScreen}
+//       />
+//     </TabOneStack.Navigator>
+//   );
+// }
 
-const TabTwoStack = createStackNavigator();
+// const TabTwoStack = createStackNavigator();
 
-function TabFavoritesNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabFavoritesScreen"
-        component={TabFavoritesScreen}
-        options={ null }
-      />
-    </TabTwoStack.Navigator>
-  );
-}
+// function TabFavoritesNavigator() {
+//   return (
+//     <TabTwoStack.Navigator>
+//       <TabTwoStack.Screen
+//         name="TabFavoritesScreen"
+//         component={TabFavorites}
+//         options={ null }
+//       />
+//     </TabTwoStack.Navigator>
+//   );
+// }
