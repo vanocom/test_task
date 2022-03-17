@@ -2,15 +2,27 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   listContainer: {
-    margin: 20
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20
   },
   cellItemBackGround: {
-    // backgroundColor: '#D5CECC',
-    // borderRadius: 8
+    borderWidth: 1,
+    borderColor: '#681A0B',
+    borderRadius: 8
   },
   cellItemContainer: {
     flexDirection: 'row',
     flex: 1
+  }, 
+  search: {
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingLeft: 20,
+    margin: 10,
+    borderColor: '#681A0B',
+    backgroundColor: 'white'
   }, 
   labelNoItemsContainer: {
     

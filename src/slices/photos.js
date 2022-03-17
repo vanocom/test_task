@@ -3,7 +3,8 @@ import { initialDataDownload } from './async_thuks';
 
 const initialState = {
     items: [],
-    favoritePhotos: []
+    favoritePhotos: [],
+    changedItem: null
 };
 
 const Photos = createSlice({
@@ -14,6 +15,7 @@ const Photos = createSlice({
         const item = state.items.find(obj => obj.id === payload);
         if (!item) return;
         item.isFavorite = !item.isFavorite;
+        state.changedItem = item;
         state.favoritePhotos = state.items.filter( item => item.isFavorite)
     }
   },
