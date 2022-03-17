@@ -10,7 +10,7 @@ const blankIcon = require('./img/star_white.png');
 const renderItem = (imageUrl, title, isFavorite) => [
   <View style={ styles.imageContainer } key="item_photo">
     <Image  source={{ uri: imageUrl }} style={ styles.image } />
-    <Image  source={ isFavorite ? selectedIcon : blankIcon } style={ { width: 24, height: 24, position: 'absolute', alignSelf: 'flex-start' } } />
+    <Image  source={ isFavorite ? selectedIcon : blankIcon } style={ styles.isFavoriteIcon } />
   </View>,
   <View style={ styles.rightContainer } key="item_panel">
     <Text style={ styles.cellItemTitle }> { title } </Text>

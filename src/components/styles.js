@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10
   }, 
+  isFavoriteIcon: {
+    width: 24,
+    height: 24,
+    position: 'absolute',
+    alignSelf: 'flex-start'
+  }, 
   search: {
     height: 40,
     borderWidth: 1,
