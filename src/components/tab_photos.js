@@ -2,8 +2,8 @@ import { useState } from "react";
 import { View, TextInput } from "react-native";
 import { useSelector } from "react-redux";
 import { selectPhotos } from '../slices/photos';
-import LabelEmptyList from "./LabelEmptyList";
-import PhotoList from "./PhotoList";
+import LabelEmptyList from "./label_empty_list";
+import PhotoList from "./photo_list";
 import styles from "./styles";
 
 const searchFilter = (text, items, setFilteredData, setSearch) => {

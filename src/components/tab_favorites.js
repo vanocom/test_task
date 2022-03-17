@@ -1,12 +1,11 @@
 import { View } from "react-native"
 import { useSelector } from "react-redux";
-import PhotoList from "./PhotoList";
+import PhotoList from "./photo_list";
 import { selectPhotos } from '../slices/photos';
-import LabelEmptyList from "./LabelEmptyList";
+import LabelEmptyList from "./label_empty_list";
 
 const TabFavorites = () => {
   const { favoritePhotos } = useSelector(selectPhotos);
-  //const favoritePhotos = items.filter( item => item.isFavorite)
   return (
     <View>
       { favoritePhotos.length > 0 ? PhotoList(favoritePhotos) : LabelEmptyList() }

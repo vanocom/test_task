@@ -6,14 +6,14 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20
   },
-  cellItemBackGround: {
-    borderWidth: 1,
-    borderColor: '#681A0B',
-    borderRadius: 8
-  },
   cellItemContainer: {
     flexDirection: 'row',
-    flex: 1
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: '#681A0B',
+    padding: 10,
+    marginTop: 10
   }, 
   search: {
     height: 40,
@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
     height: 150
   },
   imageContainer: {
-    marginRight: 20,
-    marginVertical: 15
+    marginRight: 20
   },
   rightContainer: { 
     flexGrow: 1,

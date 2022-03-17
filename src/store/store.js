@@ -11,13 +11,9 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-
-import Favorites from '../slices/favorites';
 import Photos from '../slices/photos';
 
 const rootReducer = combineReducers({
-    favorites: Favorites,
     photos: Photos
   });
 const persistConfig = {
@@ -35,7 +31,6 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(logger),
-  //middleware: (getDefaultMiddleware) => (getDefaultMiddleware().concat(logger))
 });
 
 export const persistor = persistStore(store);
